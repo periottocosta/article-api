@@ -1,0 +1,102 @@
+@import "./../../resources/styles/style.scss";
+
+.navbar{
+    padding: .5rem 0;
+    border-bottom: 1px solid #979797;
+    background-color: #fff;
+    
+    .container-fluid{
+        display: grid;
+    }    
+    .navbar-brand{
+        margin: 0 auto;
+        cursor: pointer;
+    }
+    .navbar-toggler{
+        left: 15px;
+        border: 0;
+        padding: .5rem 0;
+        outline: none;
+        position: absolute;
+        background-color: #fff;
+    }
+    .menu-container{
+        display: flex;
+        background-color: #fff;
+        
+        &.expand ul{
+            display: block;
+        }
+        
+        ul{
+            margin: 0;
+            padding: 0;
+            display: none;
+            list-style: none;
+            
+            li{
+                padding: .7rem 1.5rem;
+            }
+        }
+    }
+
+    .nav-item {
+        color: #3E433E;
+        font-size: 14px;
+        text-transform: uppercase;
+        text-decoration: none;
+        
+        &.login{
+            font-weight: bold;
+            color: #4990E2;
+        }
+    }
+}
+
+@media (min-width: 1171px){
+    .navbar{
+        .container-fluid{
+            display: flex;
+            max-width: 1140px;       
+            justify-content: space-between;
+        }
+        .navbar-toggler{
+            display: none;
+        }
+        .navbar-brand{
+            cursor: pointer;
+            padding-top: 0.3125rem;
+            margin: 0;
+            padding-bottom: 0.3125rem;
+        }
+        .nav-item {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .menu-container{
+            &.expand {
+                ul{
+                    display: flex;
+                }
+            }
+            
+            ul{
+                display: flex;
+                flex-direction: row;
+                li{
+                    display: inline;
+                    padding: 0px;
+                    padding-left: 30px;
+                }
+            }
+        }
+
+        
+    }
+}
+@media (max-width: 1170px){
+    .navbar .container-fluid{
+        padding: 0;
+    }    
+}

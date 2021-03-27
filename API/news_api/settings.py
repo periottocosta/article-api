@@ -1,9 +1,15 @@
 from pathlib import Path
 
 DEBUG = True
+USE_TZ = True
+USE_I18N = True
+USE_L10N = True
 BASE_DIR = Path(__file__).resolve().parent.parent
+TIME_ZONE = 'UTC'
+STATIC_URL = '/static/'
 SECRET_KEY = '9&-z$3)l0d8ed-%c&&kvetge2!n&gr&4pioyi6fe03s+f%zyr@'
 ALLOWED_HOSTS = ['*']
+LANGUAGE_CODE = 'en-us'
 CORS_ORIGIN_ALLOW_ALL = True
 
 INSTALLED_APPS = [
@@ -80,11 +86,3 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 2,
 }
-
-LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
-USE_I18N = True
-USE_L10N = True
-USE_TZ = True
-
-STATIC_URL = '/static/'

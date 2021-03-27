@@ -13,11 +13,10 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        python-version: [3.6]
+        python-version: [2.7]
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python ${{ matrix.python-version }}
+    - name: Deploy on BO2
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
@@ -27,6 +26,4 @@ jobs:
         pip install -r requirements.txt
     - name: Run Tests
       run: |
-        python manage.py makemigrations
-        python manage.py migrate
-        python manage.py test
+        python gcloud app deploy --no-promote --version '+new_version_number+' --project '+ current_project +' ' +yaml_path
