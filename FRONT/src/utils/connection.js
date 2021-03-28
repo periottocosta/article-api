@@ -81,7 +81,7 @@ export let newArticle = async (article) =>{
         connectionFail: false,
     };
 
-    await connectServer.post('article/', {
+    await connectServer.post('article', {
         'title': title,
         'category': category,
         'imageLink': imageLink,
