@@ -1,6 +1,0 @@
-article/__pycache__/*.pyc
-article/migrations/__pycache__/*.pyc
-news_api/__pycache__/*.pyc
-article/migrations/*.py
-.vscode/launch.json
-.vscode/settings.json
